@@ -337,6 +337,47 @@ function niche_blog_block_editor_styles() {
 }
 add_action( 'enqueue_block_editor_assets', 'niche_blog_block_editor_styles' );
 
+// Block Style
+function mytheme_register_block_styles() {
+    if ( function_exists( 'register_block_style' ) ) {
+        // Register a style for the paragraph block
+        register_block_style(
+            'core/paragraph', // The block to target
+            array(
+                'name'  => 'fancy-paragraph', // Unique name for the style
+                'label' => __( 'Fancy Paragraph', 'niche-blog' ), // Display name in the editor
+                'inline_style' => '.wp-block-paragraph.is-style-fancy-paragraph { font-style: italic; color: #333; }' // Inline CSS
+            )
+        );
+    }
+}
+add_action( 'init', 'mytheme_register_block_styles' );
+
+// Block Style Pattern
+function mytheme_register_block_patterns() {
+    if ( function_exists( 'register_block_pattern' ) ) {
+        register_block_pattern(
+            'mytheme/hero-section', // Unique name for the pattern
+            array(
+                'title'       => __( 'Hero Section', 'niche-blog' ),
+                'description' => _x( 'A hero section with heading, text, and button.', 'Block pattern description', 'niche-blog' ),
+                'content'     => '<!-- wp:group {"align":"full","backgroundColor":"primary"} -->
+                <div class="wp-block-group alignfull has-primary-background-color has-background">
+                    <h2>Welcome to My Theme</h2>
+                    <p>Start your journey with a custom theme.</p>
+                    <!-- wp:button -->
+                    <div class="wp-block-button"><a class="wp-block-button__link">Get Started</a></div>
+                    <!-- /wp:button -->
+                </div>
+                <!-- /wp:group -->',
+                'categories'  => array( 'featured', 'hero' ),
+                'keywords'    => array( 'hero', 'intro', 'welcome' ),
+            )
+        );
+    }
+}
+add_action( 'init', 'mytheme_register_block_patterns' );
+
 /**
  * Removing category text from category page.
  */

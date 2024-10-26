@@ -3,7 +3,7 @@ Contributors: FahimMurshed
 Tags: blog, custom-logo, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks, block-styles, footer-widgets, portfolio, left-sidebar, right-sidebar
 Requires at least: 5.4
 Requires PHP: 5.6
-Tested up to: 6.5
+Tested up to: 6.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,11 @@ License: MIT
 Source: https://github.com/WPTT/webfont-loader
 
 == Changelog ==
+
+= 0.1.1 =
+* Added Block Style and Block Pattern.
+* Updated WordPress latest version affinity.
+* Preparing PRO version.
 
 = 0.1.0 =
 * Updated WordPress latest version affinity.
